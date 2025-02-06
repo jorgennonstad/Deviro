@@ -93,42 +93,6 @@ const about = {
       ],
       validation: (Rule: Rule) => Rule.required(),
     },
-    {
-      name: 'imageThree',
-      title: 'Image Three',
-      type: 'image',
-      description: 'Third image representing you or your business',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: 'alt',
-          title: 'Alt Text',
-          type: 'string',
-          description: 'Alternative text for the third image',
-          validation: (Rule: Rule) =>
-            Rule.required().max(100).warning('Should be under 100 characters'),
-        },
-        {
-          name: 'name',
-          title: 'Name',
-          type: 'string',
-          description: 'Name of the person in the third image',
-          validation: (Rule: Rule) =>
-            Rule.required().max(50).warning('Should be under 50 characters'),
-        },
-        {
-          name: 'age',
-          title: 'Age',
-          type: 'number',
-          description: 'Age of the person in the third image',
-          validation: (Rule: Rule) =>
-            Rule.required().min(0).max(120).warning('Age should be between 0 and 120'),
-        },
-      ],
-      validation: (Rule: Rule) => Rule.required(),
-    },
   ],
 };
 

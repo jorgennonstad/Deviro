@@ -445,13 +445,6 @@ export default function Home() {
       </div>
       <h1>{aboutInfo.imageTwoName}</h1>
     </div>
-    <div className="person">
-      <div className="image-wrapper">
-        <img src={aboutInfo.imageThreeUrl} alt={aboutInfo.imageThreeAlt} />
-        <div className="glow-wrap"><i className="glow"></i></div>
-      </div>
-      <h1>{aboutInfo.imageThreeName}</h1>
-    </div>
   </div>
 )}
 
