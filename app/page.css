@@ -205,6 +205,7 @@ body.menu-open {
 
 /* Intro page */
 .introPage {
+  position: relative;
   height: 100vh;
   padding-top: 10px;
   margin: 0;
@@ -214,47 +215,77 @@ body.menu-open {
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-color: black; /* Background color remains black */
-  background-repeat: no-repeat;
-  background-size: 50%;
+  background-color: black;
   position: relative;
   text-align: left;
+  z-index: 2;
 }
 
+/* Diagonal Image Background */
+.diagonal-line {
+  position: absolute;
+  top: 0;
+  left: 15.8%; 
+  width: 100%;
+  height: 100%;
+  background-image: url('/newPic1v2.png'); /* Replace with your actual image */
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: -1;
+}
 
-
-.introPage::before {
+.diagonal-line::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: 900px;
-  background-repeat: no-repeat;
-  background-position: right center;
-  filter:brightness(1); 
-  opacity: 0.5; /* Example: make it fade into the background */
-  transition: filter 0.3s ease-in-out; /* Optional transition effect */
+  background: rgba(0, 0, 0, 0.1); /* Dark overlay */
+  z-index: 0;
 }
 
-/* .gif1:before{
-  background-image: url("../public//img//gifs/gif1.gif");
+/* Logo Container */
+.intro-logo-container {
+  position: absolute;
+  top: 35%;
+  left: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.gif2:before{
-  background-image: url("../public//img//gifs/gif2.gif");
-  /*filter: blur(7px) brightness(1.5) contrast(1.8) ;*/
-  /* filter: contrast(1.3)
-} */
+/* Logo Image */
+.intro-logo {
+  width: 100%;
+  height: auto;
+  opacity: 0; /* Initially hidden */
+  animation: fadeInUp 1s ease-out forwards, floatUpDown 3s infinite ease-in-out;
+}
 
-/* .gif3:before{
-  background-image: url("../public//img//gifs/gif3.gif");
-  background-size: 40%;
-}  */
+.cta-button {
+  display: inline-block;
+  margin-top: 30px; /* Space below the header */
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  background: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  align-self: flex-start; /* Aligns button to the left */
+  margin-left: 10.4%; /* Matches the positioning of h1 and h2 */
+}
 
-.gif4:before{
-  background-image: url("../public//img//gifs/gif4.gif");
+.cta-button:hover {
+  border: 2px solid white;
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
 }
 
 @keyframes fadeInUp {
@@ -278,8 +309,8 @@ body.menu-open {
 }
 
 .introPage h1 {
-  margin-top: 30vh;
-  margin-bottom: 10px;
+  margin-top: 25vh;
+  margin-bottom: 5px;
   font-size: 10rem;
   color: white;
   padding-left: 10%;
@@ -289,6 +320,12 @@ body.menu-open {
   font-size: 3rem;
   color: white;
   padding-left: 10.4%;
+}
+
+.introPage h1,
+.introPage h2,
+.navbar-item a {
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
 }
 
 /* offerPage */
@@ -563,6 +600,10 @@ body.menu-open {
     gap:5vw;
     text-align: center;
   }
+
+  .cta-button {
+    margin-left: 0px;
+  }
 }
 
 @media (max-width: 1195px) {
@@ -581,6 +622,14 @@ body.menu-open {
   .introPage::before{
     background-position: center center;
     background-size: 70%;
+  }
+
+  .cta-button {
+    margin-left: 0px;
+  }
+
+  .intro-logo-container {
+    display: none;
   }
 }
 
@@ -826,52 +875,6 @@ footer .footerLogo {
   height: 1300px;
 }
 
-@media (max-width: 480px) { 
-
-  .introPage h1 {
-    font-size: 5rem; /* Adjust the size for mobile */
-  }
-
-
-
-  .introPage h2 {
-    font-size: 1.5rem; /* Adjust the size for mobile */
-  }
-
-  .header-container h2 {
-    font-size: 1.7rem;
-  }
-
-  .navbar-list {
-    display: flex;
-    flex-direction: column; /* Stack the items vertically */
-    align-items: center;
-  }
-
-  .navbar-item {
-    margin: 5px 0; /* Add spacing between items */
-    font-size: 16px; /* Adjust size if needed */
-  }
-
-  .navbar-item a {
-    padding: 10px;
-  }
-
-  .navbar-item a {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.9rem;
-  }
-
-  /* Adjust the button size */
-  .back-to-top {
-    font-size: 12px;
-    padding: 8px;
-  }
-}
-
-
-
 @media (max-width: 1100px) {
   .contactBody{
     flex-direction: column;
@@ -972,58 +975,8 @@ footer .footerLogo {
 }
 
 
-/* Phone (480px and below) */
-@media (max-width: 480px) {
-
-  /* Intro baclgrohdn */
-  .introPage::before {
-    background-size: 100%;
-  }
-
-  .offer p {
-    font-size: 15px;
-  }
-
-  .person h1 {
-    font-size: 1.2rem;
-  }
-
-  .bio-container {
-    font-size: 15px;
-  }
-
-  /* Project edits for phone size */
-  .projectsPage > h2 {
-    font-size: 1.8rem;
-    margin: 50px 0 0 0;
-  }
-
-  .text-container {
-    padding: 0;
-  }
-
-  .projects-container {
-    padding: 30px 10px;
-    gap: 20px; /* Further reduced space between items */
-  }
-  .project-card{
-    margin: 20px 0;
-  }
-
-  .project-link {
-    width: 100%; /* Full width for single column */
-  }
-
-  .project-title {
-    font-size: 0.9em;
-  }
-
-  .project-bio {
-    font-size: 0.7em;
-  }
-
-
-  /* Intro page for phone size */
+@media (max-width: 500px) { 
+  /* Adjust intro page */
   .introPage h1 {
     font-size: 5rem; /* Adjust the size for mobile */
   }
@@ -1049,37 +1002,83 @@ footer .footerLogo {
 
   .navbar-item a {
     padding: 10px;
-  }
-
-  .navbar-item a {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 0.9rem;
   }
 
-  /* Offer edit for phone size */
-  .offerPage{
+  /* Adjust the button size */
+  .back-to-top {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  /* Adjust offer section */
+  .offerPage {
     padding: 0 15px 100px 15px;
   }
 
-  /* Laptopscroll for phone size */
+  .offer p {
+    font-size: 15px;
+  }
+
+  .person h1 {
+    font-size: 1.2rem;
+  }
+
+  .bio-container {
+    font-size: 15px;
+  }
+
+  /* Adjust project section */
+  .projectsPage > h2 {
+    font-size: 1.8rem;
+    margin: 50px 0 0 0;
+  }
+
+  .text-container {
+    padding: 0;
+  }
+
+  .projects-container {
+    padding: 30px 10px;
+    gap: 20px; /* Further reduced space between items */
+  }
+
+  .project-card {
+    margin: 20px 0;
+  }
+
+  .project-link {
+    width: 100%; /* Full width for single column */
+  }
+
+  .project-title {
+    font-size: 0.9em;
+  }
+
+  .project-bio {
+    font-size: 0.7em;
+  }
+
+  /* Adjust laptop scroll section */
   .screenpic {
     width: 425px;
     height: 180px;
   }
 
-  .screen{
+  .screen {
     height: 155px;
     width: 300px;
     position: absolute;
     top: 51%;
   }
 
-  .screen-wrapper{
+  .screen-wrapper {
     height: 1050px;
   }
 
-  .screen-wrapper .screentitle h2{
+  .screen-wrapper .screentitle h2 {
     font-size: 2.3rem;
   }
 
@@ -1094,11 +1093,5 @@ footer .footerLogo {
     width: 100%;
     min-width: 90px;
     height: 125px;
-  }
-
-  /* Adjust the button size */
-  .back-to-top {
-    font-size: 12px;
-    padding: 8px;
   }
 }

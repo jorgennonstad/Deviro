@@ -218,6 +218,8 @@ export default function Home() {
     };
   }, []);
 
+  
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -309,17 +311,17 @@ export default function Home() {
     };
   }, []);
 
-  useEffect(() => {
-    const gifClass = 'gif4'; // Single gif class
+  // useEffect(() => {
+  //   const gifClass = 'gif4'; // Single gif class
   
-    if (introPageRef.current) {
-      // Remove any previous gifX class, though in this case it's always gif1
-      introPageRef.current.classList.remove('gif4');
+  //   if (introPageRef.current) {
+  //     // Remove any previous gifX class, though in this case it's always gif1
+  //     introPageRef.current.classList.remove('gif4');
   
-      // Add the gif class
-      introPageRef.current.classList.add(gifClass);
-    }
-  }, []); // Runs only once on component mount
+  //     // Add the gif class
+  //     introPageRef.current.classList.add(gifClass);
+  //   }
+  // }, []); // Runs only once on component mount
   
 
   
@@ -358,10 +360,24 @@ export default function Home() {
           </ul>
         </nav>
       </header>
-      <div className='introPage' ref={introPageRef}>
-        <h1 className='fadeInUp'> DEVIRO</h1>
-        <h2 className='fadeInUp delay1'>Digitaliser ditt selskap</h2>
+            <div className="introPage">
+        <div className="intro-content">
+          <h1 className='fadeInUp'>DEVIRO</h1>
+          <h2 className='fadeInUp delay1'>Digitaliser ditt selskap</h2>
+          <a href="#offerPage" className="cta-button fadeInUp delay2">Les mer ↓</a>
+        </div>
+
+        {/* Diagonal Background for Left Side */}
+        <div className="diagonal-line"></div>
+
+        {/* Logo / Image on the Right Side */}
+        {/* <div className="intro-logo-container">
+          <img src="/newPic1.jpeg" alt="Deviro Logo" className="intro-logo" />
+        </div> */}
       </div>
+
+
+
       <div id="offerPage" className='offerPage'>
       <h2>Hva vi tilbyr</h2>
       <div className='offercontainer' ref={offerContainerRef}>
@@ -475,7 +491,7 @@ export default function Home() {
     <p>Email</p>
     <a href='mailto:deviro.contact@gmail.com' target='_blank'>deviro.contact@gmail.com</a> {/* mailto for email */}
     <a href='mailto:deviro.contact@gmail.com' target='_blank'>
-      <button className="contactButton">Kontakt</button>
+      <button className="contactButton">Send mail</button>
     </a>
   </div>
   
