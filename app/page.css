@@ -1094,4 +1094,11 @@ footer .footerLogo {
     min-width: 90px;
     height: 125px;
   }
+
+  .cta-button {
+    padding: 8px 20px; /* Reduce padding for a smaller button */
+    font-size: 0.9rem; /* Reduce text size */
+    border-radius: 20px; /* Slightly smaller rounded corners */
+    margin-top: 20px; /* Reduce spacing above the button */
+  }
 }
