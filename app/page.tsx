@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { FaPaintBrush, FaCode, FaExpand, FaEnvelope, FaPhone, FaMapMarkerAlt, FaArrowUp } from 'react-icons/fa'; // Importing specific icons
+import { FaPaintBrush, FaHandshake, FaTools, FaEnvelope, FaPhone, FaMapMarkerAlt, FaArrowUp } from 'react-icons/fa'; 
 import { getProjects, getAboutInfo } from '../sanity/sanity-utils'; // Adjust the path if needed
 import './page.css'; // Ensure the path is correct
 import gsap from 'gsap';
@@ -382,16 +382,16 @@ export default function Home() {
       <h2>Hva vi tilbyr</h2>
       <div className='offercontainer' ref={offerContainerRef}>
         <div className='offer'>
-          <h3><FaPaintBrush className="icon-color" /> Design</h3>
-          <p>Vi skaper nettsider med fokus på optimal brukeropplevelse, kreativitet og livlighet, skreddersydd etter dine behov. Vi tar imot inspirasjon og ønsker fra deg for å sikre at designet reflekterer din virksomhets unike identitet. I tillegg tilbyr vi prototyper slik at du kan se og teste designet før det blir implementert, slik at vi sammen kan sørge for at sluttresultatet er akkurat slik du ønsker</p>
+          <h3><FaPaintBrush className="icon-color" /> God design</h3>
+          <p>Vi skaper nettsider med fokus på optimal brukeropplevelse, kreativitet og estetikk, skreddersydd etter dine behov. Vi tar imot inspirasjon og ønsker fra deg for å sikre at designet reflekterer din virksomhets unike identitet. I tillegg tilbyr vi prototyper slik at du kan se og teste designet før det blir implementert, slik at vi sammen kan sørge for at sluttresultatet er akkurat slik du ønsker</p>
         </div>
         <div className='offer'>
-          <h3><FaExpand className="icon-color" /> Fleksibilitet</h3>
+          <h3><FaTools className="icon-color" /> Egen kontroll</h3>
           <p>Ved å bruke Sanity, en moderne plattform for innholdsadministrasjon, gir vi deg muligheten til å enkelt oppdatere og tilpasse innholdet på nettsiden din uten å måtte håndtere koding. Enten du ønsker å legge til nye elementer på menyen, oppdatere priser eller endre overskrifter, kan du gjøre dette på en intuitiv måte gjennom et brukervennlig grensesnitt</p>
         </div>
         <div className='offer'>
-          <h3><FaCode className="icon-color" /> Kode</h3>
-          <p>Vi koder nettsider som fungerer feilfritt på laptop, nettbrett og mobil, og sikrer en optimal brukeropplevelse på alle enheter. I tillegg kan vi utvikle prosjekter med WordPress eller Shopify hvis det er ønskelig, slik at du får den løsningen som passer best for dine behov</p>
+          <h3><FaHandshake className="icon-color" /> Oppfølging</h3>
+          <p>Vi legger stor vekt på god kommunikasjon og oppfølging også etter at prosjektet er ferdig. Vi er tilgjengelige for å gjøre nødvendige justeringer og tilpasninger, slik at nettsiden fortsatt møter dine behov og forventninger. Målet vårt er å sikre at du er fornøyd både underveis og etter lansering.</p>
         </div>
       </div>
     </div>
