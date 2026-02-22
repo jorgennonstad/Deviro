@@ -971,7 +971,7 @@ footer .footerLogo {
    .image-wrapper {
     width: 94%;
     min-width: 120px;
-    height: 200px;
+    height: 300px;
   }
 }
 
@@ -1093,7 +1093,7 @@ footer .footerLogo {
   .image-wrapper {
     width: 100%;
     min-width: 90px;
-    height: 125px;
+    height: 250px;
   }
 
   .cta-button {
