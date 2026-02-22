@@ -7,6 +7,8 @@ import './page.css'; // Ensure the path is correct
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Home() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [aboutInfo, setAboutInfo] = useState<AboutInfo | null>(null); // State for About info
@@ -100,8 +102,6 @@ export default function Home() {
 
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     // Animation for offerContainer to pop up
     gsap.fromTo(
       offerContainerRef.current,
@@ -153,8 +153,6 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     ScrollTrigger.create({
       trigger: screenpicWrapperRef.current,
       start: "top 90%", // Start when the top of the image is 90% from the top of the viewport (switch sooner)
@@ -165,10 +163,6 @@ export default function Home() {
       onLeaveBack: () => setLabel("Fra Offline"), // If scrolling up out of view
     });
     
-  }, []);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
   }, []);
 
   useEffect(() => {
@@ -221,8 +215,6 @@ export default function Home() {
   
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     // Initialize animations for header h2 elements
     const headerAnimation = gsap.fromTo(
       headerRefs.current,
@@ -251,8 +243,6 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-  
     // Slide-up animation for the entire project container
     const projectContainerAnimation = gsap.fromTo(
       projectCardRefs.current, // Apply animation to all project cards at once
